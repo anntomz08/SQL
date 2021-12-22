@@ -46,7 +46,8 @@ FROM STUDENT
 WHERE RESULT='PASS'; 
 
 --Generate a ranklist for the class. Indicate Pass/Fail. Ranking based on total marks obtained by the students.
-
+SELECT * FROM STUDENT
+ORDER BY TOTALMARK DESC; 
 
 --Find pass percentage of the class for mathematics
 SELECT MAX((SELECT COUNT(MATHS) FROM STUDENT WHERE MATHS>24)/(SELECT COUNT(*) FROM STUDENT)*100)
