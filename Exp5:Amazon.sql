@@ -43,12 +43,13 @@ SELECT * FROM CUSTOMERS INNER JOIN ORDERS ON CUSTOMERS.CUSTID=ORDERS.CUSTID INNE
 
 
 --Find the name of all customers who have placed an order and have their orders
-
+SELECT CUSTOMERS.CUSTNAME FROM CUSTOMERS INNER JOIN ORDERS ON ORDERS.CUSTID=CUSTOMERS.CUSTID INNER JOIN DELIVERY ON DELIVERY.CUSTID=CUSTOMERS.CUSTID;
 
 --Find the custname of all customers who have placed an order but not having their orders delivered. 
 
 
 --Find the name of the customer who has placed the most number of orders.
+SELECT CUSTOMERS.CUSTNAME FROM CUSTOMERS INNER JOIN ORDERS ON ORDERS.CUSTID=CUSTOMERS.CUSTID WHERE ORDERS.QUANTIY=(SELECT MAX(ORDERS.QUANTIY) FROM ORDERS);
 
 
 --Find the details of all customers who have purchased items exceeding a price of 5000$
