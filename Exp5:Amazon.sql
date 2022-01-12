@@ -53,7 +53,7 @@ SELECT CUSTOMERS.CUSTNAME FROM CUSTOMERS INNER JOIN ORDERS ON ORDERS.CUSTID=CUST
 
 
 --Find the details of all customers who have purchased items exceeding a price of 5000$
-
+SELECT * FROM CUSTOMERS INNER JOIN ORDERS ON ORDERS.CUSTID=CUSTOMERS.CUSTID JOIN ITEM ON ITEM.ITEMID=ORDERS.ITEMID WHERE ITEM.PRICE >5000;
 
 --Find the name and address of customers who has not ordered a ‘Samsung GalaxyS4’
 
